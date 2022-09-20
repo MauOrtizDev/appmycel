@@ -1,17 +1,17 @@
-// import React from 'react';
+import React from 'react';
+import '../styles/CartWidget.css';
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// // import { faBeer } from '@fortawesome/free-solid-svg-icons';
+// import { faBeer } from '@fortawesome/free-solid-svg-icons';
 
-// // import './styles/CartWidget.css';
+// import './styles/CartWidget.css';
 
-// const CartWidget = () => {
-//     return (
-//         <div className="cart-widget">
-//             <FontAwesomeIcon icon={faBeer} size="2x" color="white" />
-//             <div className="qty-display">0</div>
-//         </div>
-//     );
-// };
+const CartWidget = () => {
+    return (
+        <div className="cart-widget">
+            <i className="fs-2 bi bi-cart4"></i>
+            <span className="bg-danger contador-carrito">0</span>
+        </div>
+    );
+};
 
-// export default CartWidget;
+export default CartWidget;
