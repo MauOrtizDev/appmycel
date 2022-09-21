@@ -1,13 +1,14 @@
 import React from "react";
 import CartWidget from './CartWidget';
+import logoMyCel from '../../Assets/logoMyCel.svg';
+import '../../styles/Navbar.css'
 
 const Navbar = () => {
     return (
-
-
         <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
             <div className="container-fluid fs-4">
-                <a className="navbar-brand fs-1 fw-bold" href="#">MyCel</a>
+                <a className="navbar-brand" href="#"><img className='logo  nav-link'  src={logoMyCel}/></a>
+
                 <button className="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
@@ -18,7 +19,7 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse">
-                    <ul className="navbar-nav d-flex justify-content-around w-100">
+                    <ul className="navbar-nav d-flex align-items-center justify-content-around w-100">
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle"
                                 href="#"
@@ -34,11 +35,13 @@ const Navbar = () => {
                                         d="M149.333 56v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zm181.334 240v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm32-240v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24zm-32 80V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.256 0 24.001-10.745 24.001-24zm-205.334 56H24c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm386.667-56H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm0 160H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H386.667c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zM181.333 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24z">
                                     </path>
                                 </svg>
-                                Categorías
+                                 Categorías
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Teléfonos</a></li>
-                                <li><a className="dropdown-item" href="#">Tablets</a></li>
+                                <li><a className="dropdown-item" href="#">Android</a></li>
+                                <li><a className="dropdown-item" href="#">Windows Phone</a></li>
+                                <li><a className="dropdown-item" href="#">Iphone</a></li>
+                                <li><a className="dropdown-item" href="#">Otros</a></li>
                                 <li>
                                     <hr className="dropdown-divider"/>
                                 </li>
@@ -46,7 +49,7 @@ const Navbar = () => {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <form className="d-flex" role="search">
+                            <form role="search">
                                 <input className="form-control me-2"
                                     type="search"
                                     placeholder="Buscar"

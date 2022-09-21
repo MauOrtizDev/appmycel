@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/CartWidget.css';
+import '../../styles/CartWidget.css';
 
 // import { faBeer } from '@fortawesome/free-solid-svg-icons';
 
