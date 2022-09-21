@@ -2,11 +2,9 @@
 import './App.css';
 import React   from 'react';
 import Navbar from './Components/Navbar/NavBar';
-import 'bootstrap/dist/css/bootstrap.css';
-import "bootstrap/dist/css/bootstrap.min.css"; 
-// import "jquery/dist/jquery.js"
-// import "@popperjs/core"; 
-import "bootstrap";
+// import 'bootstrap/dist/css/bootstrap.css';
+// import "bootstrap/dist/css/bootstrap.min.css"; 
+// import "bootstrap";
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 // import Button from './Components/Button/Button';
 
