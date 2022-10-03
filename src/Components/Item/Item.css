@@ -1,0 +1,47 @@
+.puntaje__fondo{
+    font-size: 10px;
+    width: 6em;
+    height: 6em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    margin-right: 0.375em;
+}
+
+.puntuacion{
+
+    width: 5em;
+    height: 5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: white;
+}
+
+.puntaje_num{
+    font-size: 2.3em;
+}
+.palabra__puntos{
+    font-size: 0.8em;
+}
+
+img{
+    width: 120px;
+    aspect-ratio: 120/254;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style-type: none;
+}
+
+.btn-comparacion{
+    margin-left: 0.3em;
+    border-radius : 10px 10px 10px 0;
+    position: relative;
+
+}
+.btn-comparacion:hover{
+    background: #f99500;
+    position: relative;
+}

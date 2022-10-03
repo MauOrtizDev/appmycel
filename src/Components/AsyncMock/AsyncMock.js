@@ -1,0 +1,153 @@
+const productos = [{
+    "id": 1,
+    "nombre": "Vivo Y77e (T1)",
+    "fLanzamiento": "18/08/2022",
+    "precio": 1080000,
+    "caracteristicas": {
+        "Diseño": 45,
+        "Pantalla": 33,
+        "Cámaras": 64,
+        "Batería": 48,
+        "Otros": 50
+    }
+}, {
+    "id": 2,
+    "nombre": "Huawei Nova 10",
+    "fLanzamiento": "08/07/2022",
+    "precio": 1900000,
+    "caracteristicas": {
+        "Diseño": 47,
+        "Pantalla": 46,
+        "Cámaras": 71,
+        "Batería": 51,
+        "Otros": 62
+    }
+}, {
+    "id": 3,
+    "nombre": "Infinix Note 12 Pro 4G",
+    "fLanzamiento": "26/08/2022",
+    "precio": 1057000,
+    "caracteristicas": {
+        "Diseño": 37,
+        "Pantalla": 35,
+        "Cámaras": 70,
+        "Batería": 49,
+        "Otros": 53
+    }
+}, {
+    "id": 4,
+    "nombre": "Honor X8 5G",
+    "fLanzamiento": "15/08/2022",
+    "precio": 998000,
+    "caracteristicas": {
+        "Diseño": 45,
+        "Pantalla": 29,
+        "Cámaras": 56,
+        "Batería": 45,
+        "Otros": 64
+    }
+}, {
+    "id": 5,
+    "nombre": "TCL 201",
+    "fLanzamiento": "05/08/2021",
+    "precio": 1199000,
+    "caracteristicas": {
+        "Diseño": 63,
+        "Pantalla": 25,
+        "Cámaras": 47,
+        "Batería": 34,
+        "Otros": 30
+    }
+}, {
+    "id": 6,
+    "nombre": "IQOO 9T",
+    "fLanzamiento": "02/08/2022",
+    "precio": 2600000,
+    "caracteristicas": {
+        "Diseño": 60,
+        "Pantalla": 69,
+        "Cámaras": 68,
+        "Batería": 55,
+        "Otros": 79
+    }
+}, {
+    "id": 7,
+    "nombre": "Samsung Galaxy A23 5G",
+    "fLanzamiento": "31/03/2022",
+    "precio": 8980000,
+    "caracteristicas": {
+        "Diseño": 45,
+        "Pantalla": 48,
+        "Cámaras": 57,
+        "Batería": 53,
+        "Otros": 61
+    }
+}, {
+    "id": 8,
+    "nombre": "Xiaomi Redmi K50 Extreme Edition",
+    "fLanzamiento": "11/08/2022",
+    "precio": 2248000,
+    "caracteristicas": {
+        "Diseño": 44,
+        "Pantalla": 67,
+        "Cámaras": 75,
+        "Batería": 55,
+        "Otros": 84
+    }
+}, {
+    "id": 9,
+    "nombre": "OnePlus Ace Pro",
+    "fLanzamiento": "09/08/2022",
+    "precio": 2380000,
+    "caracteristicas": {
+        "Diseño": 44,
+        "Pantalla": 64,
+        "Cámaras": 63,
+        "Batería": 57,
+        "Otros": 71
+    }
+}, {
+    "id": 10,
+    "nombre": "Lenovo Legion Y70",
+    "fLanzamiento": "23/08/2022",
+    "precio": 2590000,
+    "caracteristicas": {
+        "Diseño": 44,
+        "Pantalla": 65,
+        "Cámaras": 70,
+        "Batería": 51,
+        "Otros": 80
+    }
+}, {
+    "id": 11,
+    "nombre": "Motorola Edge (2022)",
+    "fLanzamiento": "05/08/2022",
+    "precio": 2450000,
+    "caracteristicas": {
+        "Diseño": 63,
+        "Pantalla": 66,
+        "Cámaras": 63,
+        "Batería": 54,
+        "Otros": 76
+    }
+}, {
+    "id": 12,
+    "nombre": "Oppo Reno8 4G",
+    "fLanzamiento": "26/08/2022",
+    "precio": 1977000,
+    "caracteristicas": {
+        "Diseño": 20,
+        "Pantalla": 37,
+        "Cámaras": 59,
+        "Batería": 48,
+        "Otros": 63
+    }
+}]
+
+export const getProductos = () => {
+    return new Promise((res,rej) => {
+        setTimeout(()=>{
+            res(productos)
+        },1500)
+
+    })}
