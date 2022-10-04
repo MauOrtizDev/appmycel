@@ -1,37 +1,28 @@
-
 import './App.css';
-import React   from 'react';
+import React from 'react';
 import Navbar from './Components/Navbar/NavBar';
-// import 'bootstrap/dist/css/bootstrap.css';
-// import "bootstrap/dist/css/bootstrap.min.css"; 
-// import "bootstrap";
+import "bootstrap";
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
+import MercadoLibre from './Components/MercadoLibre/MercadoLibre';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Button from './Components/Button/Button';
 
 
 function App() {
   return (
-        <div>
-  <Navbar/>
-  <ItemListContainer greetings={"¡Bienvenido! Aquí irán los productos"}/>
-  {/* <Button label={'Prueba'} tipo={'primary'} accion={() => {alert('Epa')}}/> */}
-  </div> 
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+    <div>
+      {/* <MercadoLibre/> */}
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/detail' element={<ItemDetailContainer/>}/>
+        </Routes>
+      </BrowserRouter>
+      {/* <Button label={'Prueba'} tipo={'primary'} accion={() => {alert('Epa')}}/> */}
+
+    </div>
   );
 }
 

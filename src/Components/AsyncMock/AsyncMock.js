@@ -151,3 +151,10 @@ export const getProductos = () => {
         },1500)
 
     })}
+
+    export const getProduct = (id) => {
+        return new Promise((res,rej) => {
+            setTimeout(()=>{
+                res(productos.find(prod => prod.id === id))
+            },1000)
+        })}
