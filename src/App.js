@@ -16,8 +16,9 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path='/' element={<ItemListContainer/>}/>
-          <Route path='/detail' element={<ItemDetailContainer/>}/>
+          <Route path='/' element={<ItemListContainer greetings={"Nuestros productos"}/>}/>
+          <Route path='/marca/:marcaId' element={<ItemListContainer greetings={"Nuestros productos"}/>}/>
+          <Route path='/detail/:productId' element={<ItemDetailContainer/>}/>
         </Routes>
       </BrowserRouter>
       {/* <Button label={'Prueba'} tipo={'primary'} accion={() => {alert('Epa')}}/> */}

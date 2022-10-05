@@ -1,0 +1,10 @@
+.detail{
+    margin: 1em;
+    max-width: 800px;
+    border-radius: 0.375em;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5)
+}
+
+.img_detail{
+    width: 180px;
+}

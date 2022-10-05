@@ -1,0 +1,6 @@
+.barra {
+    background: linear-gradient(134deg,rgba(73, 32, 255, 0.733),rgba(51, 245, 125, 0.733) 30%,rgba(197, 27, 132, 0.733));
+    /* background-color: #f99500; */
+    height: 5px;
+    border-radius: 3px;
+}
