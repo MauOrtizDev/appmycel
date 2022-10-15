@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import { getProduct } from "../AsyncMock/AsyncMock"
 import { useParams } from "react-router-dom"
 import './ItemDetailContainer.css'
-import PuntajeBarras from "./PuntajeBarras"
-import Counter from "../Counter/Counter"
+import ItemDetail from "../ItemDetail/ItemDetail"
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
@@ -29,23 +28,7 @@ const ItemDetailContainer = () => {
 
     return (
         <div className="detail mx-auto text-center">
-            <h5 className="m-3">{product?.nombre}</h5>
-            <div className="w-100 m-auto d-flex justify-content-around align-items-start">
-
-                <img className="img_detail" src={"/celulares/" + product?.nombre.toLowerCase() + ".webp"} alt={product?.nombre} />
-
-                <div className='w-50 d-flex flex-column'>
-                    <PuntajeBarras crts={product?.caracteristicas} />
-                    <h5 className='my-3 border'>Precio: ${Intl.NumberFormat('es-CO').format(product?.precio)}</h5>
-                    <div className="d-flex flex-row align-items-center justify-content-center">
-                        <Counter stock={product?.stock} />
-                        <button className="btn-comparacion py-2 my-2 w-50" disabled>
-                            Comprar
-                        </button>
-                    </div>
-                    <h6 className='my-5'>En Stock: {stockLeft}</h6>
-                </div>
-            </div>
+            <ItemDetail product={product} />
         </div>
     )
 }

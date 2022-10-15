@@ -1,12 +1,8 @@
 import './PuntajeBarras.css'
 
 const PuntajeBarras = ({ crts }) => {
-    console.log(crts);
+
     Object.keys(crts).map((key, index) => {
-
-        console.log(index);
-        console.log(`${key}: ${crts[key]}`)
-
 
     })
     return (
