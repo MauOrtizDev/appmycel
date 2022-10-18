@@ -5,7 +5,8 @@ import "bootstrap";
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { CartContextProvider } from './Context/CartContext' 
+import { CartContextProvider } from './Context/CartContext';
+import Cart from './Components/Cart/Cart';
 // import MercadoLibre from './Components/MercadoLibre/MercadoLibre';
 // import Button from './Components/Button/Button';
 
@@ -25,6 +26,7 @@ function App() {
             <Route path='/marca/:marcaId' element={<ItemListContainer greetings={"Nuestros productos"} />} />
             <Route path='/detail/:productId' element={<ItemDetailContainer />} />
             <Route path='*' element={<h2>404 No Encontrado</h2>} />
+            <Route path='/cart' element={<Cart/>} />
           </Routes>
         </BrowserRouter>
       </CartContextProvider>

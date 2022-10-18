@@ -1,5 +1,6 @@
 import PuntajeBarras from "../PuntajeBarras/PuntajeBarras"
 import ItemCount from "../ItemCount/ItemCount"
+import { Link } from 'react-router-dom'
 import { useState } from "react";
 import { useContext } from "react";
 import { CartContext } from '../../Context/CartContext'
@@ -17,7 +18,7 @@ const ItemDetail = ({ product }) => {
         const productToAdd = {
             id, nombre, precio, cantidad
         }
-        console.log('se añadieron este numero de productos: '+cantidad)
+        console.log('se añadieron este numero de productos: ' + cantidad)
         addItem(productToAdd)
     }
 
@@ -31,7 +32,13 @@ const ItemDetail = ({ product }) => {
                     <PuntajeBarras crts={caracteristicas} />
                     <h5 className='my-3 border'>Precio: ${Intl.NumberFormat('es-CO').format(precio)}</h5>
                     <div className="d-flex flex-row align-items-center justify-content-center">
-                        <ItemCount stock={stock} initial={0} onAdd={handleOnAdd}/>
+                        {
+                            quantityToAdd === 0 ? (
+                                <ItemCount initial={0} onAdd={handleOnAdd} stock={stock} />
+                            ) : (
+                                <Link to='/cart'>Finalizar compra</Link>
+                            )
+                        }
                     </div>
                     <h6 className='my-5'>En Stock: {stock}</h6>
                 </div>

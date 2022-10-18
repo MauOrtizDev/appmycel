@@ -1,12 +1,12 @@
 import React from "react";
-import CartWidget from './CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import logoMyCel from '../../Assets/logoMyCel.svg';
 import '../../styles/Navbar.css';
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
+        <nav className="navbar navbar-dark navbar-expand-md bg-dark">
             <div className="container-fluid fs-4">
                 <Link to="/">
                     <img className='logo  nav-link' src={logoMyCel} />
@@ -67,7 +67,8 @@ const Navbar = () => {
                             <a className="nav-link disabled">Iniciar Sesión</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link"><CartWidget /></a>
+                            <Link to='/cart' className="nav-link"><CartWidget />
+                            </Link>
                         </li>
                     </ul>
 

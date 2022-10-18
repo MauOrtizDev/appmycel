@@ -9,8 +9,6 @@ const ItemListContainer = ({ greetings }) => {
     const [loading, setLoading] = useState(true);
     const {marcaId} = useParams();
 
-    console.log(marcaId);
-
     useEffect(() => {
         getProductos().then(res => {
             if(marcaId){
@@ -26,8 +24,6 @@ const ItemListContainer = ({ greetings }) => {
     if (loading) {
         return <h2 className="mx-auto">Cargando</h2>
     }
-    console.log(productos);
-    console.log(productos.filter(prod => prod.marca === marcaId));
     return (
         <div className="container-fluid album py-3 bg-light">
             <h2 className="text-center">{greetings}</h2>
