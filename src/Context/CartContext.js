@@ -11,7 +11,7 @@ export const CartContextProvider = ({ children }) => {
             setCart([...cart, productToAdd])
 
         } else {
-            console.log('ya esta agregado')
+            alert('Producto ya esta agregado')
         }
     }
 

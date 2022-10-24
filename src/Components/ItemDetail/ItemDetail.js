@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { CartContext } from '../../Context/CartContext'
 
 const ItemDetail = ({ product }) => {
-    const { id, nombre, precio, stock, caracteristicas } = product;
+    const { id, nombre, img, precio, stock, caracteristicas } = product;
 
     const [quantityToAdd, setQuantityToAdd] = useState(0)
 
@@ -16,7 +16,7 @@ const ItemDetail = ({ product }) => {
         setQuantityToAdd(cantidad)
 
         const productToAdd = {
-            id, nombre, precio, cantidad
+            id, nombre, img, precio, cantidad,
         }
         addItem(productToAdd)
     }
@@ -25,7 +25,7 @@ const ItemDetail = ({ product }) => {
         <>
             <h2>{nombre}</h2>
             <div className="w-100 m-auto d-flex justify-content-around align-items-start">
-                <img className="img_detail" src={"/celulares/" + nombre.toLowerCase() + ".webp"} alt={nombre} />
+                <img className="img_detail" src={img} alt={nombre} />
 
                 <div className='w-50 d-flex flex-column'>
                     <PuntajeBarras crts={caracteristicas} />

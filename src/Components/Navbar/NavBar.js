@@ -9,7 +9,7 @@ const Navbar = () => {
         <nav className="navbar navbar-dark navbar-expand-md bg-dark">
             <div className="container-fluid fs-4">
                 <Link to="/">
-                    <img className='logo  nav-link' src={logoMyCel} />
+                    <img className='logo  nav-link' alt='MyCel e-Commerce' src={logoMyCel} />
                 </Link>
                 <button className="navbar-toggler"
                     type="button"

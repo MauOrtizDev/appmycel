@@ -2,9 +2,6 @@ import './PuntajeBarras.css'
 
 const PuntajeBarras = ({ crts }) => {
 
-    Object.keys(crts).map((key, index) => {
-
-    })
     return (
         <div>
             <h5>Características:</h5>

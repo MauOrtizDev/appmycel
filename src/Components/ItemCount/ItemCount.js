@@ -23,7 +23,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                 <h4 className="px-4 w-50">{count}</h4>
                 <button type="button" className="btn btn-primary" onClick={sumar}>+</button>
             </div>
-            <button className="btn-comparacion py-2 my-2 w-50" onClick={()=>onAdd(count)} disabled={count == 0 ? true : false}>
+            <button className="btn-comparacion py-2 my-2 w-50" onClick={()=>onAdd(count)} disabled={count === 0 ? true : false}>
                 Agregar al Carrito
             </button>
         </>
