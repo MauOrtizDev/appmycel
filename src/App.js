@@ -8,17 +8,12 @@ import { CartContextProvider } from './Context/CartContext';
 import Cart from './Components/Cart/Cart';
 import Checkout from './Components/Checkout/Checkout';
 
-// import MercadoLibre from './Components/MercadoLibre/MercadoLibre';
-// import Button from './Components/Button/Button';
-
 
 function App() {
-
 
   return (
     <div>
 
-      {/* <MercadoLibre/> */}
       <CartContextProvider>
         <BrowserRouter>
           <Navbar />
@@ -32,7 +27,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </CartContextProvider>
-      {/* <Button label={'Prueba'} tipo={'primary'} accion={() => {alert('Epa')}}/> */}
 
     </div>
   );

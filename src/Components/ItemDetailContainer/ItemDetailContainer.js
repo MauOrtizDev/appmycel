@@ -10,9 +10,6 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
     const { productId } = useParams()
     const [loading, setLoading] = useState(true);
-    // const [stockLeft, setStockLeft] = useState(0)
-    // console.log("Id: "+productId)
-    // console.log("tipo: "+ typeof(productId))
 
     useEffect(() => {
         const docRef = doc(db, 'productos', productId)
@@ -28,12 +25,6 @@ const ItemDetailContainer = () => {
         }).finally(() => {
             setLoading(false)
         })
-        //     getProduct(productId).then(res => {
-        //         setProduct(res)
-        //         setLoading(false)
-        //         setStockLeft(res.stock)
-        //     })
-        // }
     }, [productId])
 
     if (loading) {

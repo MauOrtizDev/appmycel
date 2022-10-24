@@ -24,10 +24,6 @@ export const CartContextProvider = ({ children }) => {
         setCart(cartWithoutItem)
     }
 
-    //   useEffect(() => {
-    //     const totalQuantity = getTotalQuantity()
-    //     setTotalQuantity(totalQuantity)
-    //   }, [cart])
 
     useEffect(() => {
         const total = getTotal()

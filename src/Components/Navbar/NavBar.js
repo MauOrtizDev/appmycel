@@ -59,10 +59,6 @@ const Navbar = () => {
                             <ul className="bg-light fs-6">
                             </ul>
                         </li>
-                        {/* <li className="nav-item">
-                            <a className="nav-link" href="#">Sobre Nosotros</a>
-                        </li> */}
-
                         <li className="nav-item">
                             <a className="nav-link disabled">Iniciar Sesión</a>
                         </li>

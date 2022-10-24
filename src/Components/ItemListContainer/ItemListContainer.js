@@ -13,7 +13,7 @@ const ItemListContainer = ({ greetings }) => {
 
     useEffect(() => {
         setLoading(true)
-        
+
         const collectionRef = marcaId
             ? query(collection(db, 'productos'), where('marca', '==', marcaId))
             : collection(db, 'productos')
@@ -35,16 +35,6 @@ const ItemListContainer = ({ greetings }) => {
                 setLoading(false)
             })
 
-        // useEffect(() => {
-        //     getProductos().then(res => {
-        //         if(marcaId){
-        //             setProductos(res.filter(prod => prod.marca.toLowerCase() === marcaId))
-        //         } else setProductos(res);
-        //     }).catch((err) => {
-        //         console.log(err)
-        //     }).finally(() => {
-        //         setLoading(false);
-        //     })
         }, [marcaId])
 
         if (loading) {

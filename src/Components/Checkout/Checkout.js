@@ -3,7 +3,7 @@ import { CartContext } from "../../Context/CartContext"
 import { getDocs, addDoc, collection, where, query, documentId, writeBatch } from 'firebase/firestore'
 import { db } from '../../services/firebase'
 import FormCheckout from "../FormCheckout/FormCheckout"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
@@ -11,6 +11,8 @@ const Checkout = () => {
     const { cart, total, clear } = useContext(CartContext)
 
     const [isCartEmpty, setIsCartEmpty] = useState(true);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -73,15 +75,15 @@ const Checkout = () => {
                 await batch.commit()
 
                 const orderRef = collection(db, 'ordenes')
-                console.log(orderRef)
-                console.log(objOrder)
                 const orderAdded = await addDoc(orderRef, objOrder)
 
-                console.log(`El id de su orden es: ${orderAdded.id}`)
+                alert(`Pedido realizado! Su id de orden es: ${orderAdded.id}`)
                 clear()
+
             } else {
-                console.log('Hay productos fuera de stock')
+                alert('Hay productos fuera de stock. Por favor intenta nuevamente')
             }
+            navigate('/');
         } catch (error) {
             console.log(error)
         } finally {
@@ -90,7 +92,7 @@ const Checkout = () => {
     }
 
     if (loading) {
-        return <h1>Su orden se esta generando...</h1>
+        return <h1 className="text-center">Su orden se esta generando...</h1>
     }
 
     return (
@@ -114,7 +116,6 @@ const Checkout = () => {
                 <div className="p-2">
                     <FormCheckout onCreateOrder={createOrder} cart={cart} />
                 </div>
-                {/* <button className='btn btn-success m-3' onClick={createOrder}>Agregar documento</button> */}
             </div>
         </div>
     )

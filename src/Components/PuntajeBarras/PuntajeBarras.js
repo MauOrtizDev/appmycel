@@ -23,15 +23,6 @@ const PuntajeBarras = ({ crts }) => {
                     </div>
 
                 )
-                // crts.map(caracteristica => {
-                // console.log(caracteristica);
-                // <li>
-                //     {caracteristica}
-                //     <div style={{ background: 'black', width: caracteristica.value }}>
-
-                //     </div>
-                // </li>
-
             }
         </div>
     )
