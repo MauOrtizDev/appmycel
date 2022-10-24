@@ -1,23 +1,39 @@
 import { useEffect, useState } from "react"
-import { getProduct } from "../AsyncMock/AsyncMock"
+// import { getProduct } from "../AsyncMock/AsyncMock"
 import { useParams } from "react-router-dom"
 import './ItemDetailContainer.css'
 import ItemDetail from "../ItemDetail/ItemDetail"
+import { getDoc, doc } from 'firebase/firestore'
+import { db } from '../../services/firebase'
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
     const { productId } = useParams()
     const [loading, setLoading] = useState(true);
-    const [stockLeft, setStockLeft] = useState(0)
+    // const [stockLeft, setStockLeft] = useState(0)
     // console.log("Id: "+productId)
     // console.log("tipo: "+ typeof(productId))
 
     useEffect(() => {
-        getProduct(productId).then(res => {
-            setProduct(res)
+        const docRef = doc(db, 'productos', productId)
+
+        getDoc(docRef).then(doc => {
+            const data = doc.data()
+
+            const productAdapted = { id: doc.id, ...data }
+
+            setProduct(productAdapted)
+        }).catch(error => {
+            console.log(error)
+        }).finally(() => {
             setLoading(false)
-            setStockLeft(res.stock)
         })
+        //     getProduct(productId).then(res => {
+        //         setProduct(res)
+        //         setLoading(false)
+        //         setStockLeft(res.stock)
+        //     })
+        // }
     }, [productId])
 
     if (loading) {

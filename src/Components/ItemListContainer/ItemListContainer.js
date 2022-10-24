@@ -1,36 +1,62 @@
 import { useState, useEffect } from "react"
-import { getProductos } from "../AsyncMock/AsyncMock"
+// import { getProductos } from "../AsyncMock/AsyncMock"
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
+import { getDocs, collection, query, where } from 'firebase/firestore'
+import { db } from '../../services/firebase'
 
 const ItemListContainer = ({ greetings }) => {
 
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
-    const {marcaId} = useParams();
+    const { marcaId } = useParams();
 
     useEffect(() => {
-        getProductos().then(res => {
-            if(marcaId){
-                setProductos(res.filter(prod => prod.marca.toLowerCase() === marcaId))
-            } else setProductos(res);
-        }).catch((err) => {
-            console.log(err)
-        }).finally(() => {
-            setLoading(false);
+        setLoading(true)
+        
+        const collectionRef = marcaId
+            ? query(collection(db, 'productos'), where('marca', '==', marcaId))
+            : collection(db, 'productos')
+
+
+        getDocs(collectionRef).then(response => {
+
+            const productsAdapted = response.docs.map(doc => {
+                const data = doc.data()
+                return { id: doc.id, ...data }
+            })
+
+            setProductos(productsAdapted)
         })
-    }, [marcaId])
+            .catch(error => {
+                alert('No se pueden obtener los productos')
+            })
+            .finally(() => {
+                setLoading(false)
+            })
 
-    if (loading) {
-        return <h2 className="mx-auto">Cargando</h2>
+        // useEffect(() => {
+        //     getProductos().then(res => {
+        //         if(marcaId){
+        //             setProductos(res.filter(prod => prod.marca.toLowerCase() === marcaId))
+        //         } else setProductos(res);
+        //     }).catch((err) => {
+        //         console.log(err)
+        //     }).finally(() => {
+        //         setLoading(false);
+        //     })
+        }, [marcaId])
+
+        if (loading) {
+            return <h2 className="mx-auto text-center">Cargando</h2>
+        }
+        return (
+            <div className="container-fluid album py-3 bg-light">
+                <h2 className="text-center">{greetings}</h2>
+                <ItemList productos={productos} />
+            </div>
+        )
+
     }
-    return (
-        <div className="container-fluid album py-3 bg-light">
-            <h2 className="text-center">{greetings}</h2>
-            <ItemList productos={productos} />
-        </div>
-    )
-
-}
 
 export default ItemListContainer

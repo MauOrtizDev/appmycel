@@ -7,9 +7,8 @@ const CartItem = ({cartItem}) => {
 
     const {removeItem} = useContext(CartContext)
 
-    console.log(cartItem)
+
     const {id, nombre, precio, cantidad} = cartItem;
-    console.log(id)
     return (<div className="cartItem border d-flex justify-content-around align-items-center">
                 <img src={"/celulares/" + nombre.toLowerCase() + ".webp"} alt={nombre} />
             <h5>{nombre}</h5>

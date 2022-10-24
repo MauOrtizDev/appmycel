@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { CartContext } from '../../Context/CartContext'
 
 const ItemDetail = ({ product }) => {
-    const { id, nombre, marca, fLanzamiento, precio, stock, caracteristicas } = product;
+    const { id, nombre, precio, stock, caracteristicas } = product;
 
     const [quantityToAdd, setQuantityToAdd] = useState(0)
 
@@ -18,7 +18,6 @@ const ItemDetail = ({ product }) => {
         const productToAdd = {
             id, nombre, precio, cantidad
         }
-        console.log('se añadieron este numero de productos: ' + cantidad)
         addItem(productToAdd)
     }
 
@@ -36,7 +35,7 @@ const ItemDetail = ({ product }) => {
                             quantityToAdd === 0 ? (
                                 <ItemCount initial={0} onAdd={handleOnAdd} stock={stock} />
                             ) : (
-                                <Link to='/cart'>Finalizar compra</Link>
+                                <Link to='/cart' className="btn btn-success">Finalizar compra</Link>
                             )
                         }
                     </div>
