@@ -32,7 +32,6 @@ const Cart = () => {
                         {cart.length === 0 ? <></> : <button className='btn btn-success'>
                             Ir a Checkout
                         </button>}
-
                     </Link>
 
                 </div>
